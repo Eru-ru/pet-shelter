@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (valid) {
         popupModal.classList.remove("hidden"); // Show the popup
         const image = document.getElementById('imageMood');
-        image.src = '/src/imgs/happy.png';
+        image.src = 'pet-shelter/src/imgs/happy.png';
         form.reset(); // Reset the form fields
       }
     });
