@@ -50,7 +50,7 @@ document.getElementById('imageInput').addEventListener('change', function (event
         };
         reader.readAsDataURL(file);
     } else {
-        preview.innerHTML = `<img src="/src/imgs/attach.png" alt="Image" class="rounded-lg border-2 border-gray-400 shadow-2xl">`;
+        preview.innerHTML = `<img src="pet-shelter/src/imgs/attach.png" alt="Image" class="rounded-lg border-2 border-gray-400 shadow-2xl">`;
     }
 });
 
