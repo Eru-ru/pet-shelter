@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+    <title>Donate for the Animals</title>
+    <link rel="icon" type="image/png" href="/src/imgs/LOGO.png">
+</head>
+<body>
+    
+    <section class="w-full bg-white md:mb-10">
+
+        <div class="container min-w-full">
+
+            <nav class="w-full py-2 bg-blue-200 flex-wrap lg:flex items-center fixed z-50" x-data="{navbarOpen:false}">
+                <div class="flex items-center justify-between px-12 mb-0 lg:mb-0">
+                    <img src="/src/imgs/LOGO.png" alt="Logo"> 
+
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center border-2 border-gray-500 text-gray-500 rounded-md" @click="navbarOpen = !navbarOpen">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <ul class="px-24 lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-8 xl:space-x-16" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="adopt.html">Adopt</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="events.html">Events</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="donate.html">Donate</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="about.html">About us</a>
+                    </li>
+                </ul>
+
+                <div class="mx-24 lg:flex flex-col md:flex-row md:items-center text-center md:space-x-6" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <a href="login.html" class="px-4 py-2 border-2 border-blue-500 text-blue-500 font-bold text-sm rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">Log In</a>
+                </div>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row justify-between px-24"></div>
+        </div> <!-- container.// -->
+    </section>
+
+    <section class="bg-white py-16">
+
+        <div class="container max-w-screen-xl mx-auto px-4">
+
+            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center mb-10">Latest to donate</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl">
+                    <img src="/src/imgs/animal_images/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Pet Food and Treat Drive<br><br></h4>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">Description: Collect donations of pet food, treats, and supplements for cats, dogs, and other animals.</p>
+    
+                    <div class="flex items-center justify-between mb-8">
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Goal : <span class="font-semibold text-gray-900 text-md md:text-lg">P10000</span></h6>
+    
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Raised : <span class="font-semibold text-gray-900 text-md md:text-lg">P8400</span></h6>
+                    </div>
+    
+                    <div class="hidden md:block lg:flex items-center justify-between mb-8">
+                        <div>
+                            <div class="w-72 h-2 bg-gray-500 opacity-10 rounded-lg absolute"></div>
+    
+                            <div class="w-56 h-2 bg-blue-400 rounded-lg relative"></div>
+                        </div>
+    
+                        <p class="font-light text-gray-900 text-md">84%</p>
+                    </div>
+
+                    <a href="donation.html"><button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Donate</button></a>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl">
+                    <img src="/src/imgs/animal_images/2.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Toy and Enrichment Item Drive<br><br></h4>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">Description: Ask for donations of toys, scratching posts, chew items, and enrichment supplies like puzzle feeders.<br></p>
+    
+                    <div class="flex items-center justify-between mb-8">
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Goal : <span class="font-semibold text-gray-900 text-md md:text-lg">P20000</span></h6>
+    
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Raised : <span class="font-semibold text-gray-900 text-md md:text-lg">P16000</span></h6>
+                    </div>
+    
+                    <div class="hidden md:block lg:flex items-center justify-between mb-8">
+                        <div>
+                            <div class="w-72 h-2 bg-gray-500 border-2 opacity-10 rounded-lg absolute"></div>
+    
+                            <div class="w-52 h-2 bg-blue-400 rounded-lg relative"></div>
+                        </div>
+    
+                        <p class="font-light text-gray-900 text-md">80%</p>
+                    </div>
+
+                    <a href="donation.html"><button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Donate</button></a>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl">
+                    <img src="/src/imgs/animal_images/3.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Pet Medicine and First Aid Kit Drive</h4>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">Description: Collect medical supplies like flea/tick preventatives, dewormers, first aid kits, and bandages.</p>
+    
+                    <div class="flex items-center justify-between mb-8">
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Goal : <span class="font-semibold text-gray-900 text-md md:text-lg">P50000</span></h6>
+    
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Raised : <span class="font-semibold text-gray-900 text-md md:text-lg">P43000</span></h6>
+                    </div>
+    
+                    <div class="hidden md:block lg:flex items-center justify-between mb-8">
+                        <div>
+                            <div class="w-72 h-2 bg-gray-500 opacity-10 rounded-lg absolute"></div>
+    
+                            <div class="w-60 h-2 bg-blue-400 rounded-lg relative"></div>
+                        </div>
+    
+                        <p class="font-light text-gray-900 text-md">86%</p>
+                    </div>
+
+                    <a href="donation.html"><button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Donate</button></a>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl">
+                    <img src="/src/imgs/animal_images/4.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Collar, Leash, and Harness Drive<br><br></h4>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">Description: Collect collars, leashes, harnesses, and ID tags to ensure pets are ready for walks and adoption events.</p>
+    
+                    <div class="flex items-center justify-between mb-8">
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Goal : <span class="font-semibold text-gray-900 text-md md:text-lg">P5000</span></h6>
+    
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Raised : <span class="font-semibold text-gray-900 text-md md:text-lg">P3300</span></h6>
+                    </div>
+    
+                    <div class="hidden md:block lg:flex items-center justify-between mb-8">
+                        <div>
+                            <div class="w-72 h-2 bg-gray-500 opacity-10 rounded-lg absolute"></div>
+    
+                            <div class="w-48 h-2 bg-blue-400 rounded-lg relative"></div>
+                        </div>
+    
+                        <p class="font-light text-gray-900 text-md">66%</p>
+                    </div>
+
+                    <a href="donation.html"><button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Donate</button></a>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl">
+                    <img src="/src/imgs/animal_images/5.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Cleaning Supplies Drive<br><br></h4>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">Description: Ask for cleaning essentials like pet-safe disinfectants, mops, buckets, trash bags, and laundry detergent.</p>
+    
+                    <div class="flex items-center justify-between mb-8">
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Goal : <span class="font-semibold text-gray-900 text-md md:text-lg">P20000</span></h6>
+    
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Raised : <span class="font-semibold text-gray-900 text-md md:text-lg">P10000</span></h6>
+                    </div>
+    
+                    <div class="hidden md:block lg:flex items-center justify-between mb-8">
+                        <div>
+                            <div class="w-72 h-2 bg-gray-500 opacity-10 rounded-lg absolute"></div>
+    
+                            <div class="w-36 h-2 bg-blue-400 rounded-lg relative"></div>
+                        </div>
+    
+                        <p class="font-light text-gray-900 text-md">50%</p>
+                    </div>
+
+                    <a href="donation.html"><button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Donate</button></a>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl">
+                    <img src="/src/imgs/animal_images/6.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Monetary Donation Drive (“Sponsor a Pet”)</h4>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">Description: Organize a donation campaign where individuals can sponsor a specific pet’s food, medical care, or adoption fee.</p>
+    
+                    <div class="flex items-center justify-between mb-8">
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Goal : <span class="font-semibold text-gray-900 text-md md:text-lg">P75000</span></h6>
+    
+                        <h6 class="font-light text-gray-400 text-sm md:text-lg">Raised : <span class="font-semibold text-gray-900 text-md md:text-lg">P19500</span></h6>
+                    </div>
+    
+                    <div class="hidden md:block lg:flex items-center justify-between mb-8">
+                        <div>
+                            <div class="w-72 h-2 bg-gray-500 opacity-10 rounded-lg absolute"></div>
+    
+                            <div class="w-20 h-2 bg-blue-400 rounded-lg relative"></div>
+                        </div>
+    
+                        <p class="font-light text-gray-900 text-md">26%</p>
+                    </div>
+
+                    <a href="donation.html"><button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Donate</button></a>
+                </div>
+            </div>
+        </div> <!-- container.// -->
+    </section>
+
+    <section class="bg-white">
+
+        <div class="container max-w-screen-xl mx-auto px-4">
+
+            <div class="flex flex-col lg:flex-row justify-between space-x-16">
+                <div class="flex justify-center lg:justify-start">
+                    <img src="/src/imgs/animal_images/side-image.png" alt="Image">
+                </div>
+    
+                <div class="mt-16">
+                    <h1 class="font-semibold text-gray-900 text-xl md:text-4xl mb-20">You can help lots of people by <br> donating</h1>
+    
+                    <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
+                        <div class="mb-5 md:mb-0">
+                            <div class="w-20 py-6 flex justify-center bg-gray-500 bg-opacity-5 rounded-xl mb-4">
+                                <i class="fa-solid fa-award text-2xl"></i>
+                            </div>
+        
+                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">500+</h3>
+        
+                            <p class="font-light text-gray-400 text-md md:text-lg">Animals Taken <br> care of and sheltered</p>
+                        </div>
+        
+                        <div>
+                            <div class="w-20 py-6 flex justify-center bg-green-500 bg-opacity-5 rounded-xl mb-4">
+                                <i class="fa-solid fa-arrow-trend-up text-green-500 text-2xl"></i>
+                            </div>
+        
+                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">P2.5M+</h3>
+        
+                            <p class="font-light text-gray-400 text-md md:text-lg">Raised and donations <br> received in all time</p>
+                        </div>
+                    </div>
+    
+                    <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20">
+                        <div class="mb-5 md:mb-0">
+                            <div class="w-20 py-6 flex justify-center bg-yellow-500 bg-opacity-5 rounded-xl mb-4">
+                                <i class="fa-solid fa-handshake-angle text-yellow-500 text-2xl"></i>
+                            </div>
+        
+                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">1000+</h3>
+        
+                            <p class="font-light text-gray-400 text-md md:text-lg">Volunteers around the <br> world</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- container.// -->
+
+    </section>
+
+    <div class="h-32 bg-white"></div>
+      
+    <footer class="relative w-full bg-[#83b6ff] flex flex-col justify-center items-center px-12 py-8 overflow-visible z-0">
+        <!-- Waves -->
+        <div class="absolute -top-[80px] left-0 w-full h-32 overflow-visible">
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-100 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_4s_linear_infinite] z-10">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-50 filter hue-rotate-[30deg] brightness-150 animate-[animate_4s_linear_infinite] z-20">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-20 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_3s_linear_infinite] z-30">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-70 filter hue-rotate-[30deg] brightness-150 animate-[animate_3s_linear_infinite] z-40">
+            </div>
+        </div>
+    
+        <!-- Social Icons -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="#"
+                    class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Menu Links -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    "Malou   
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Pet
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Haven: 
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Where
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Wagging
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Tails
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Find
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Forever
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Trails!"
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Footer Text -->
+        <p class="text-white text-sm font-light my-2 z-50">&copy;Malou Pet Haven Shelter</p>
+    </footer>
+    
+    <!-- Ionicons Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script src="https://kit.fontawesome.com/e81754ee21.js" crossorigin="anonymous"></script>
+</body>
+</html>

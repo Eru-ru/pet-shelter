@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Adopt a Pet</title>
+    <link rel="icon" type="image/png" href="/src/imgs/LOGO.png">
+</head>
+<body>
+    
+    <section class="w-full bg-white md:mb-10">
+
+        <div class="container min-w-full">
+
+            <nav class="w-full py-2 bg-blue-200 flex-wrap lg:flex items-center fixed z-50" x-data="{navbarOpen:false}">
+                <div class="flex items-center justify-between px-12 mb-0 lg:mb-0">
+                    <img src="/src/imgs/LOGO.png" alt="Logo"> 
+
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center border-2 border-gray-500 text-gray-500 rounded-md" @click="navbarOpen = !navbarOpen">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <ul class="px-24 lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-8 xl:space-x-16" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="adopt.html">Adopt</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="events.html">Events</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="donate.html">Donate</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="about.html">About us</a>
+                    </li>
+                </ul>
+
+                <div class="mx-24 lg:flex flex-col md:flex-row md:items-center text-center md:space-x-6" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <a href="login.html" class="px-4 py-2 border-2 border-blue-500 text-blue-500 font-bold text-sm rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">Log In</a>
+                </div>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row justify-between px-24"></div>
+
+            <div class="flex flex-col lg:flex-row justify-evenly px-24">
+                <div class="my-24">
+                    <img src="/src/imgs/about-img.png" alt="Image">
+                </div>
+
+                <div class="text-center lg:text-left mt-36">
+                    <h1 class="font-bold text-gray-900 text-3xl md:text-6xl leading-normal mb-6">About Us</h1>
+
+                    <p class="font-light text-gray-400 text-md md:text-lg leading-normal mb-6">Welcome to <strong>Malou Pet Haven Shelter</strong>, <br> a non-profit organization dedicated to <br> rescuing and rehoming abandoned pets. <br> We provide love, care, and hope to animals <br> in need while connecting them with loving families.</p>
+
+                    <p class="font-light text-gray-400 text-md md:text-lg leading-normal mb-6">Our user-friendly platform makes it easy <br> to adopt pets, donate, and stay updated <br> on our mission. Together, we can give every animal <br> a second chance at a happy life.</p>
+
+                    <p class="font-light text-gray-400 text-md md:text-lg leading-normal"><i class="fa-solid fa-envelope"></i> maloupethavenshelterofficial@gmail.com</p>
+                    <p class="font-light text-gray-400 text-md md:text-lg leading-normal"><i class="fa-solid fa-location-dot"></i> M246+VC2, Kaingin Rd, Quezon City, Metro Manila</p>
+                    <p class="font-light text-gray-400 text-md md:text-lg leading-normal"><i class="fa-solid fa-clock"></i> Mon - Sat | 8:00 A.M. - 5:00 P.M.</p>
+                </div>
+            </div>
+
+        </div> <!-- container.// -->
+    </section>
+
+    <!-- feature section -->
+    <section class="bg-gray-200 py-16 md:mt-10">
+        
+        <div class="container max-w-screen-xl mx-auto px-4">
+
+            <p class="font-light text-gray-500 text-lg md:text-xl text-center uppercase mb-6">-- Our Mission --</p>
+
+            <h1 class="font-semibold text-gray-900 text-xl md:text-2xl text-center leading-normal mb-10">Malou Pet Haven Shelter is a non-profit dedicated to rescuing and rehoming stray animals. We strive to connect pets with loving families, promote animal welfare, and make adoption and donations easy through community support and innovative platforms.</h1>
+        
+        </div> <!-- container.// -->
+    </section>
+
+    <section class="bg-white py-8">
+
+        <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center mb-8">Find Us here</h1>
+        
+        <div class="container max-w-screen-xl mx-auto border-4 border-gray-500 rounded-xl shadow-lg">
+            <iframe class="w-full border-4 rounded-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.960035848617!2d121.00776783156043!3d14.658209470229664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b71c0774d565%3A0x9ec49f52eaf4ba23!2sMALOU%20PET%20SHOP%20-%20Kaingin%20Branch!5e0!3m2!1sen!2sph!4v1734418503233!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    
+    </section>
+
+    <div class="h-32 bg-white"></div>
+      
+    <footer class="relative w-full bg-[#83b6ff] flex flex-col justify-center items-center px-12 py-8 overflow-visible z-0">
+        <!-- Waves -->
+        <div class="absolute -top-[80px] left-0 w-full h-32 overflow-visible">
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-100 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_4s_linear_infinite] z-10">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-50 filter hue-rotate-[30deg] brightness-150 animate-[animate_4s_linear_infinite] z-20">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-20 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_3s_linear_infinite] z-30">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-70 filter hue-rotate-[30deg] brightness-150 animate-[animate_3s_linear_infinite] z-40">
+            </div>
+        </div>
+    
+        <!-- Social Icons -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="https://www.facebook.com/profile.php?id=100092083008611&sk=photos"
+                    class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Menu Links -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    San
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Darating
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Ang
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Mga
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Salita?
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Footer Text -->
+        <p class="text-white text-sm font-light my-2 z-50">&copy;Malou Pet Haven Shelter</p>
+    </footer>
+    
+    <!-- Ionicons Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script src="https://kit.fontawesome.com/e81754ee21.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+    <title>Adopt a Pet</title>
+    <link rel="icon" type="image/png" href="/src/imgs/LOGO.png">
+</head>
+<body>
+    
+    <section class="w-full bg-white md:mb-10">
+
+        <div class="container min-w-full">
+
+            <nav class="w-full py-2 bg-blue-200 flex-wrap lg:flex items-center fixed z-50" x-data="{navbarOpen:false}">
+                <div class="flex items-center justify-between px-12 mb-0 lg:mb-0">
+                    <img src="/src/imgs/LOGO.png" alt="Logo"> 
+
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center border-2 border-gray-500 text-gray-500 rounded-md" @click="navbarOpen = !navbarOpen">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <ul class="px-24 lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-8 xl:space-x-16" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="adopt.html">Adopt</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="events.html">Events</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="donate.html">Donate</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="about.html">About us</a>
+                    </li>
+                </ul>
+
+                <div class="mx-24 lg:flex flex-col md:flex-row md:items-center text-center md:space-x-6" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <a href="login.html" class="px-4 py-2 border-2 border-blue-500 text-blue-500 font-bold text-sm rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">Log In</a>
+                </div>
+            </nav>
+            <div class="flex flex-col lg:flex-row justify-between px-24"></div>
+        </div> <!-- container.// -->
+    </section>
+
+    <section class="bg-white py-16">
+
+        <div class="container max-w-screen-xl mx-auto px-4">
+            
+            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center mb-10">Adopt a Pet</h1>
+            <div>
+                <input type="search" name="" id="" class="w-2/5 h-10 my-4 xl:my-0 border-2 border-blue-400 rounded-lg indent-2 mr-8 focus:outline-none focus:border-blue-500" placeholder="Search">
+                
+                <label for="pet-select">Choose a pet:</label>
+                <select id="pet-select" name="pets" class="w-1/12 border-2 border-blue-400 rounded-lg px-1.5 py-1.5 mr-8">
+                    <option value="all">All</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="fish">Fish</option>
+                </select>
+
+                <label for="pet-select">Age:</label>
+                <select id="pet-select" name="pets" class="w-1/12 border-2 border-blue-400 rounded-lg px-1.5 py-1.5 mr-8 focus:outline-none focus:border-blue-500">
+                    <option value="all">All</option>
+                    <option value="baby">Baby</option>
+                    <option value="young">Young</option>
+                    <option value="adult">Adult</option>
+                </select>
+
+                <a href="sendpet.html"><button class="rounded-xl px-6 py-2 bg-info font-semibold bg-blue-300 text-black text-lg rounded-x hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Send a Pet for Adoption</button></a>
+
+            </div>
+
+        </div>
+    </section> <!-- End -->
+
+    <section class="bg-white">
+
+        <div class="container max-w-screen-xl mx-auto px-4">
+
+            <div id="no-results" class="h-64 text-center text-gray-500 text-xl hidden mb-8">
+                <br>
+                <p><i class="fa-solid fa-face-sad-cry"></i> We don't have that animal <i class="fa-solid fa-heart-crack"></i></p>
+                <br>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" id="pet-container">
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="bird" data-age="adult">
+                    <img src="/src/imgs/bird/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+                
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Rooster</h4>
+                
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Bird</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Adult</p>
+                
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A small farm bird with short feathers, a red comb on its head, and a short beak. It can be white, brown, or black.</p>
+                
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="bird" data-age="young">
+                    <img src="/src/imgs/bird/2.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Green Parrot</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Bird</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Young</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A bird with a curved beak, a long tail, and sometimes a red or yellow patch on its wings. It often mimics sounds and talks!</p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="cat" data-age="baby">
+                    <img src="/src/imgs/cats/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Domestic Cat</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Cat</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Baby</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A kitten has soft gray and white fur, a tiny pink nose, and curious eyes. Playful and alert <br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="cat" data-age="Adult">
+                    <img src="/src/imgs/cats/2.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Orange Kitten</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Cat</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Adult</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">An orange cat with soft fur is lazily laying around, relaxing and enjoying its nap.<br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="cat" data-age="baby">
+                    <img src="/src/imgs/cats/3.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Baby Black Cat</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Cat</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Baby</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A cute little baby black cat ready to find its new home, and give joy to its owner<br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="cat" data-age="young">
+                    <img src="/src/imgs/cats/4.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">White Cat</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Cat</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Young</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10"> A lost kitten on a journey trying to understand the world and his purpose on this planet<br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="dog" data-age="young">
+                    <img src="/src/imgs/dogs/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Samoyed Puppy</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Dog</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Young</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A smol little puppy that doesn't know C, Java, JavaScript, Python, and Math. Just ball<br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="dog" data-age="adult">
+                    <img src="/src/imgs/dogs/2.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Corgi</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Dog</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Adult</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A real cutiee with its smal arms and legs it walks like a charm. Also Cute<br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="dog" data-age="adult">
+                    <img src="/src/imgs/dogs/3.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Shih Tzu</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Dog</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Adult</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A tiny cloud with a button nose and a face that says, “I rule this house.”<br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="dog" data-age="young">
+                    <img src="/src/imgs/dogs/4.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Samoyed Puppy</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Dog</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Young</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A fluffy cloud that crash-landed for a nap—too cute to reboot!<br><br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="dog" data-age="adult">
+                    <img src="/src/imgs/dogs/5.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Korean Shih Tzu</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Dog</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Adult</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10"> A tiny lion in disguise, ruling naps and hearts alike!<br><br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="fish" data-age="young">
+                    <img src="/src/imgs/fish/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Angel Fish</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Fish</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Young</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A shimmering jewel of the water, the angelfish glides gracefully with its elegant fins spread wide like angel wings.</p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="fish" data-age="adult">
+                    <img src="/src/imgs/fish/2.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Banded Butterflyfish</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Fish</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Adult</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A striped explorer of the sea, dressed to impress in nature’s finest black-and-white! Trying to find the One Piece</p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="hamster" data-age="baby">
+                    <img src="/src/imgs/hamster/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Baby Hamster</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Hamster</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Baby</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A stealthy fluff-ship armed with tiny paws, plotting a snack attack on enemy crumbs!<br><br></p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl" data-category="rabbit" data-age="young">
+                    <img src="/src/imgs/rabbit/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-semibold text-gray-900 text-lg md:text-2xl mb-6">Striped Rabbit</h4>
+
+                    <p class="font-normal text-sm md:text-md lg:text-lg">Category: Rabbit</p>
+                    <p class="font-normal text-sm md:text-md lg:text-lg mb-5">Age: Young</p>
+    
+                    <p class="font-light text-gray-400 text-sm md:text-md lg:text-lg mb-10">A stealthy nibble-cruiser on a top-secret mission to dismantle enemy foliage, one leaf at a time!</p>
+
+                    <!-- Adopt Button -->
+                    <button onclick="openConfirmModal()" class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Adopt</button>
+                
+                    <!-- First Modal: Confirmation -->
+                    <div id="confirmModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-80 lg:w-96 flex justify-center flex-col">
+                            <h2 class="text-2xl font-semibold mb-4">Is this the one you want to adopt?</h2>
+                            <img src="/src/imgs/adopt.png" class="rounded-xl" alt="" srcset="">
+                            
+                            <div class="flex justify-evenly mt-6">
+                                <button onclick="handleYes()" class="px-8 py-2 bg-blue-500 text-white rounded-xl">Yes</button>
+                                <button onclick="handleNo()" class="px-8 py-2 bg-gray-300 text-black rounded-xl">No</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Second Modal: Thank You -->
+                    <div id="thankYouModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center text-center items-center hidden z-50">
+                        <div class="bg-white p-6 rounded-xl w-96">
+                            <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
+                            <img src="/src/imgs/adopt-thanks.png" alt="" srcset="">
+                            <p>We will get your pet ready. You can come pick them up from our store.</p>
+                            <div class="flex justify-center mt-6">
+                                <button onclick="closeThankYouModal()" class="px-6 py-2 bg-blue-500 text-white rounded-xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- container.// -->
+    </section>
+
+    <div class="h-32 bg-white"></div>
+      
+    <footer class="relative w-full bg-[#83b6ff] flex flex-col justify-center items-center px-12 py-8 overflow-visible z-0">
+        <!-- Waves -->
+        <div class="absolute -top-[80px] left-0 w-full h-32 overflow-visible">
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-100 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_4s_linear_infinite] z-10">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-50 filter hue-rotate-[30deg] brightness-150 animate-[animate_4s_linear_infinite] z-20">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-20 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_3s_linear_infinite] z-30">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-70 filter hue-rotate-[30deg] brightness-150 animate-[animate_3s_linear_infinite] z-40">
+            </div>
+        </div>
+    
+        <!-- Social Icons -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="#"
+                    class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Menu Links -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    "Malou   
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Pet
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Haven: 
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Where
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Wagging
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Tails
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Find
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Forever
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Trails!"
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Footer Text -->
+        <p class="text-white text-sm font-light my-2 z-50">&copy;Malou Pet Haven Shelter</p>
+    </footer>
+    
+    <!-- Ionicons Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script src="https://kit.fontawesome.com/e81754ee21.js" crossorigin="anonymous"></script>
+    
+    <script src="/scripts/adopt.js"></script>
+    <script src="/scripts/filter.js"></script>
+
+</body>
+</html>

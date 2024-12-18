@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Events</title>
+    <link rel="icon" type="image/png" href="/src/imgs/LOGO.png">
+</head>
+<body>
+    
+    <section class="w-full bg-white md:mb-10">
+
+        <div class="container min-w-full">
+
+            <nav class="w-full py-2 bg-blue-200 flex-wrap lg:flex items-center fixed z-50" x-data="{navbarOpen:false}">
+                <div class="flex items-center justify-between px-12 mb-0 lg:mb-0">
+                    <img src="/src/imgs/LOGO.png" alt="Logo"> 
+
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center border-2 border-gray-500 text-gray-500 rounded-md" @click="navbarOpen = !navbarOpen">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <ul class="px-24 lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-8 xl:space-x-16" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="adopt.html">Adopt</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="events.html">Events</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="donate.html">Donate</a>
+                    </li>
+                    <li class="font-bold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                        <a href="about.html">About us</a>
+                    </li>
+                </ul>
+
+                <div class="mx-24 lg:flex flex-col md:flex-row md:items-center text-center md:space-x-6" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                    <a href="login.html" class="px-4 py-2 border-2 border-blue-500 text-blue-500 font-bold text-sm rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">Log In</a>
+                </div>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row justify-between px-24"></div>
+        </div> <!-- container.// -->
+    </section>
+
+    <section class="bg-white py-16">
+
+        <div class="container max-w-screen-xl mx-auto px-4">
+
+            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center mb-10">Latest Events</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl flex flex-col">
+                    <img src="/src/imgs/events/1.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-bold text-gray-900 text-lg md:text-2xl xl:mb-6 mb-14">Malou Pet - Adoption Fair</h4>
+    
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-5">Description: Host an open adoption day where families can meet and interact with pets available for adoption.</p>
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">When: Dec. 20, 2024 | 8:00 A.M. - 5:00 P.M. <br> Where: Manila City</p>
+
+                    <a href="specific-event.html?event=adoption-fair" 
+                        data-event="adoption-fair"
+                        data-title="Malou Pet - Adoption Fair"
+                        data-description="Host an open adoption day where families can meet and interact with pets available for adoption."
+                        data-date="Dec. 20, 2024 | 8:00 A.M. - 5:00 P.M."
+                        data-location="Manila City"
+                        data-image="/src/imgs/events/1.png"
+                        data-participant="750 Participants">
+
+                        <button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Check Event</button>
+                    </a>
+
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl flex flex-col">
+                    <img src="/src/imgs/events/2.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-bold text-gray-900 text-lg md:text-2xl mb-6">Pet Vaccination and Microchipping Drives</h4>
+    
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-5">Description: Offer low-cost or free vaccinations, spay/neuter services, and microchipping for pets in the community.</p>
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">When: Dec. 21, 2024 | 8:00 A.M. - 5:00 P.M. <br> Where: Quezon City</p>
+
+                    <a href="specific-event.html?event=pet-vaccine" 
+                        data-event="pet-vaccine"
+                        data-title="Pet Vaccination and Microchipping Drives"
+                        data-description="Offer low-cost or free vaccinations, spay/neuter services, and microchipping for pets in the community."
+                        data-date="Dec. 21, 2024 | 8:00 A.M. - 5:00 P.M."
+                        data-location="Quezon City"
+                        data-image="/src/imgs/events/2.png"
+                        data-participant="623 Participants">
+
+                        <button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Check Event</button>
+                    </a>
+
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl flex flex-col">
+                    <img src="/src/imgs/events/3.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-bold text-gray-900 text-lg md:text-2xl xl:mb-6 mb-10">Kids’ “Be a Pet Hero” Day</h4>
+    
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">Description: Organize a children-focused event with activities like reading to pets, learning pet care basics, and creating toys for animals.</p>
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">When: Jan. 9, 2024 | 8:00 A.M. - 12:00 P.M. <br> Where: Bagiuo City</p>
+                    
+                    <a href="specific-event.html?event=pet-hero" 
+                        data-event="pet-hero"
+                        data-title="Kids’ “Be a Pet Hero” Day"
+                        data-description="Organize a children-focused event with activities like reading to pets, learning pet care basics, and creating toys for animals."
+                        data-date="Jan. 9, 2024 | 8:00 A.M. - 12:00 P.M."
+                        data-location="Bagiuo City"
+                        data-image="/src/imgs/events/3.png"
+                        data-participant="162 Participants">
+
+                        <button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Check Event</button>
+                    </a>
+
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl flex flex-col">
+                    <img src="/src/imgs/events/4.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-bold text-gray-900 text-lg md:text-2xl mb-6">Fundraising Fun Run (“Paws for a Cause”)</h4>
+    
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">Description: Organize a charity walk or run where participants can bring their pets to support the shelter.</p>
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">When: Jan. 16, 2024 | 9:00 A.M.<br> Where: Quezon City</p>
+
+                    <a href="specific-event.html?event=paws-cause" 
+                        data-event="paws-cause"
+                        data-title="Fundraising Fun Run (“Paws for a Cause”)"
+                        data-description="Organize a charity walk or run where participants can bring their pets to support the shelter."
+                        data-date="Jan. 16, 2024 | 9:00 A.M."
+                        data-location="Quezon City"
+                        data-image="/src/imgs/events/4.png"
+                        data-participant="250 Participants">
+
+                        <button class="w-full py-4 bg-info font-semibold bg-blue-200 text-black text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Check Event</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <button class="px-7 py-5 font-semibold bg-gray-100 text-gray-900 rounded-2xl hover:bg-gray-300 hover:text-gray-600 transition ease-in-out duration-500">More Events</button>
+            </div>
+        </div> <!-- container.// -->
+    </section>
+
+    <section class="bg-white">
+
+        <div class="container max-w-screen-xl mx-auto px-4">
+
+            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center mb-10">Finished Events</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl flex flex-col">
+                    <img src="/src/imgs/events/5.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-bold text-gray-900 text-lg md:text-2xl mb-6">Pet Care Workshops</h4>
+    
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">When: Nov. 20, 2024 <br> 8:00 A.M. - 5:00 P.M. <br> Where: BU Main Campus, Albay</p>
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg">Description: Host an open adoption day where families can meet and interact with pets available for adoption.</p>
+
+                </div>
+
+                <div class="px-6 py-6 w-full border-2 border-gray-200 rounded-3xl flex flex-col">
+                    <img src="/src/imgs/events/6.png" alt="Image" class="mb-6 hover:opacity-75 transition ease-in-out duration-500 rounded-xl">
+    
+                    <h4 class="font-bold text-gray-900 text-lg md:text-2xl mb-6">Pet Photoshoot Day</h4>
+    
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg mb-10">When: Oct. 15, 2024 <br> 9:00 A.M. - 4:00 P.M. <br> Where: SM Naga Malls, Naga City</p>
+                    <p class="font-light text-black text-sm md:text-md lg:text-lg">Description: Host an open adoption day where families can meet and interact with pets available for adoption.</p>
+
+                </div>
+            </div>
+        </div> <!-- container.// -->
+    </section>
+    
+    <div class="h-32 bg-white"></div>
+      
+    <footer class="relative w-full bg-[#83b6ff] flex flex-col justify-center items-center px-12 py-8 overflow-visible z-0">
+        <!-- Waves -->
+        <div class="absolute -top-[80px] left-0 w-full h-32 overflow-visible">
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-100 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_4s_linear_infinite] z-10">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-50 filter hue-rotate-[30deg] brightness-150 animate-[animate_4s_linear_infinite] z-20">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-20 filter hue-rotate-[30deg] brightness-150 animate-[animateWaves_3s_linear_infinite] z-30">
+            </div>
+            <div
+                class="absolute left-0 w-full h-24 bg-[url('https://i.ibb.co/wQZVxxk/wave.png')] bg-[length:1000px_100px] opacity-70 filter hue-rotate-[30deg] brightness-150 animate-[animate_3s_linear_infinite] z-40">
+            </div>
+        </div>
+    
+        <!-- Social Icons -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="#"
+                    class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-4xl text-white transition-transform duration-500 hover:translate-y-[-10px]">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Menu Links -->
+        <ul class="flex justify-center items-center my-4 flex-wrap z-50">
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    "Malou   
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Pet
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Haven: 
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Where
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Wagging
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Tails
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Find
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Forever
+                </a>
+            </li>
+            <li class="mx-2 list-none">
+                <a href="#" class="text-white text-lg font-light opacity-75 transition-opacity duration-500 hover:opacity-100">
+                    Trails!"
+                </a>
+            </li>
+        </ul>
+    
+        <!-- Footer Text -->
+        <p class="text-white text-sm font-light my-2 z-50">&copy;Malou Pet Haven Shelter</p>
+    </footer>
+    
+    <!-- Ionicons Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script src="https://kit.fontawesome.com/e81754ee21.js" crossorigin="anonymous"></script>
+</body>
+</html>

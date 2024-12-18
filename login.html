@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+    <title>Home</title>
+    <link rel="icon" type="image/png" href="/src/imgs/LOGO.png">
+</head>
+<body>
+    
+    <section class="w-full bg-white md:mb-10">
+
+        <div class="container min-w-full">
+
+            <nav class="w-full py-2 bg-blue-200 flex-wrap lg:flex items-center fixed z-50" x-data="{navbarOpen:false}">
+                <div class="flex items-center justify-between px-12 mb-0 lg:mb-0">
+                    <img src="/src/imgs/LOGO.png" alt="Logo"> 
+
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center border-2 border-blue-500 text-blue-500 rounded-md" @click="navbarOpen = !navbarOpen">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row justify-between px-24">
+                
+                <div class="w-full lg:w-1/3 text-center lg:text-left mt-40">
+                    <form id="registerForm">
+                        <h1 class="font-bold text-gray-900 text-2xl md:text-6xl leading-normal mb-10">Log In</h1>
+                        
+                        <p class="font-light text-left text-gray-400 text-md md:text-lg leading-normal my-2">Username: </p>
+                        <input id="userInput" type="text" class="w-full h-10 border-2 border-blue-400 rounded-lg indent-2 mr-8 focus:outline-none focus:border-blue-500" placeholder="Username">
+                        <p id="userError" class="text-red-500 text-sm hidden">Input Username</p>
+
+                        <p class="font-light text-left text-gray-400 text-md md:text-lg leading-normal my-2">Password: </p>
+                        <input id="passInput" type="password" class="w-full h-10 border-2 border-blue-400 rounded-lg indent-2 mr-8 focus:outline-none focus:border-blue-500" placeholder="Password">
+                        <p id="passError" class="text-red-500 text-sm hidden">Input Password</p>
+                        <p id="passError1" class="text-red-500 text-sm hidden">Password too short</p>
+                        
+                        <p class="mt-4"><strong>Don't Have An Account??</strong></p><a href="register.html"><u>Create Account</u></a><br>
+
+                        <button type="submit" class="w-1/2 my-6 py-2 font-semibold bg-blue-200 text-black text-base rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Log in!</button>
+                        
+                    </form>
+                </div>
+                
+                <div class="w-fit my-24 flex justify-center lg:block">
+                    <img src="/src/imgs/register.png" alt="Image">
+                </div>
+
+                <div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+                    <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm">
+                        <h2 class="text-2xl font-bold text-center mb-4">Congratulations!</h2>
+                        <p class="text-center">You are Logged In</p>
+                        <a href="index.html"><button  id="closePopup" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Proceed to Home Page</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="/scripts/login.js"></script>
+    <script src="https://kit.fontawesome.com/e81754ee21.js" crossorigin="anonymous"></script>
+</body>
+</html>
